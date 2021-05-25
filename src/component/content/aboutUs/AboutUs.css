@@ -1,0 +1,12 @@
+
+
+/* about-layout */
+.about-layout {
+    background-image: url(https://www.freepik.com/free-vector/office-people-drinking-coffee-during-lunch-break_9650584.htm#page=1&query=about%20us&position=16);
+    background-color: antiquewhite;
+    overflow: auto;
+}
+
+div{
+    height: 50%;
+}
