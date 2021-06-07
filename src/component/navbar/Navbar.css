@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 .logo {
     float: left;
-    width: 100%;
-    height: 100px;
+    width: 100px;
+    height: 100%;
+    background-color:whitesmoke;
+    margin: 10px 0 0 15px;
+    border-radius: 10%;
   }
-
+  
   .logoBox{
-      padding-top: 1px;
-      padding-bottom:75px;
-      height: 100px;
-      width: 100x;
+    
+      /* padding:0; */
+      height: 100%;
+      width: 100%;
       background-color: #fff;
   }
   .ant-row-rtl .logo {
@@ -19,3 +24,118 @@
   .whiteTheme{
     background-color: white;
   }
+
+  /* Figma and custom CSS */
+
+  /* Navigation Bar */
+.NavBar {
+position: relative;
+top: 0px;
+width: 100%;
+/* background: #FFF; */
+background: rgb(0,21,41);
+/* box-shadow: inset 7px 7px 20px rgba(255, 255, 255, 0.25); */
+color: whitesmoke;
+vertical-align: middle;
+}
+
+.NavBar-flex {
+  list-style: none;
+  display: flex;
+  float: right;
+  padding: 0px 15px;
+  line-height: 80px;
+  height: 80px;
+}
+
+.NavBar-flexItem {
+  padding: 0px 15px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.NavBar .link {
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  /* padding-left: 5px; */
+  color: #FCF6F6;
+}
+.NavBar .name-icon {
+  height: auto;
+  width: auto;
+  padding-right: 5px;
+  color: #FCF6F6;
+}
+
+.NavBar .NavBar-text {
+  float: right;
+  position: relative;
+}
+
+.NavBar .User-icon {
+float: right;
+padding: 10px;
+line-height: 100%;
+}
+
+.NavBar .User-icon .User-logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: red;
+  background-image: url( '../../assests/svg/vft-right.png');
+  position: relative;
+  left: 50px;
+  
+
+  
+}
+
+.NavBar .User-icon .User-name {
+  color: #FCF6F6;
+  position: relative;
+  /* top: -30px; */
+}
+
+.NavText {
+position: relative;
+width: 97px;
+height: 42px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+color: #FCF6F6;
+}
+
+.NavLogo {
+position: fixed;
+width: 121px;
+height: 100%;
+
+/* background: url(20210521_005047.png); */
+}
+
+.NavGuestLogo {
+position: relative;
+width: 76px;
+height: 62px;
+background: #FFFFFF;
+}
+
+.NavGuestName {
+position: relative;
+width: 65px;
+height: 21px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 21px;
+/* identical to box height */
+color: #FFFBFB;
+}
+
+/* PURU CSS */

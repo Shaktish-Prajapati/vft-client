@@ -14,6 +14,7 @@ import Register from './component/content/users/Register'
 import Login from './component/content/users/Login.js';
 import AboutUs from './component/content/aboutUs/AboutUs'
 import ProtectedRoute from './component/protection/ProtectedRoute'
+import Footer  from './component/footer/Footer'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           {/* <ProtectedRoute path='/website' component={Website}/> */}
           <Route path='/website' component={Website}/>
         </Switch>
+        <Footer/>
         </Router>
       </Layout>
     </Provider>
