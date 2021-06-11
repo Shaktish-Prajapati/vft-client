@@ -207,7 +207,6 @@ const RegistrationForm = ({history}) => {
                     
                     </Content>
                 </Layout>
-                <Footer />
             </Layout>
             );
         };

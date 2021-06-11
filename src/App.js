@@ -7,10 +7,11 @@ import Payment from './component/payment/Payment';
 import Navbar from './component/navbar/Navbar'
 import {Layout} from 'antd'
 import AppHeader from './component/header/Header';
-import AppFooter from './component/footer/Footer'
+import AppFooter from './component/footer/Footer';
 import Landing from './component/content/landing/Landing';
 import Website from './component/content/weOffer/website/Website';
 import Register from './component/content/users/Register'
+// import Login from './component/content/users/Login_s.js';
 import Login from './component/content/users/Login.js';
 import AboutUs from './component/content/aboutUs/AboutUs'
 import ProtectedRoute from './component/protection/ProtectedRoute'
