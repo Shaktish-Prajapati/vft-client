@@ -1,3 +1,4 @@
+import './Register.css'
 import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Layout } from 'antd';
@@ -82,8 +83,14 @@ const RegistrationForm = ({history}) => {
                     <h2 style={{color:'whitesmoke'}}>User Registration</h2>
                 </Header>
                 <Layout className="site-layout" >
-                    <Content style={{ margin: '24px 16px 0' }} >
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360, background:'white' }}>
+                    <Content>
+                        <Row>
+                            <Col span={3}></Col>
+                            <Col span={18} className="site-layout-background">
+                            <Row>
+                            <Col span={12} className="image-layout"></Col>
+                            <Col span={12} className="text-layout">
+                        <div>
                         <Form
                             {...formItemLayout}
                             form={form}
@@ -94,6 +101,38 @@ const RegistrationForm = ({history}) => {
                             }}
                             scrollToFirstError
                             >
+                                <Form.Item
+                            name="name"
+                            label="Name"
+                            tooltip="What do you want others to call you?"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your Name!',
+                                    whitespace: true,
+                                },
+                            ]}
+                            >
+                            <Input />
+                            </Form.Item>
+                            
+                            <Form.Item
+                            name="phone"
+                            label="Phone Number"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your phone number!',
+                                },
+                            ]}
+                            >
+                            <Input
+                            addonBefore={prefixSelector}
+                            style={{
+                                width: '100%',
+                            }}
+                            />
+                            </Form.Item>
                             <Form.Item
                             name="email"
                             label="E-mail"
@@ -149,38 +188,7 @@ const RegistrationForm = ({history}) => {
                             <Input.Password />
                             </Form.Item>
                             
-                            <Form.Item
-                            name="name"
-                            label="Name"
-                            tooltip="What do you want others to call you?"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your Name!',
-                                    whitespace: true,
-                                },
-                            ]}
-                            >
-                            <Input />
-                            </Form.Item>
                             
-                            <Form.Item
-                            name="phone"
-                            label="Phone Number"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your phone number!',
-                                },
-                            ]}
-                            >
-                            <Input
-                            addonBefore={prefixSelector}
-                            style={{
-                                width: '100%',
-                            }}
-                            />
-                            </Form.Item>
                             
                             <Form.Item
                             name="agreement"
@@ -203,8 +211,13 @@ const RegistrationForm = ({history}) => {
                             </Button>
                             </Form.Item>
                         </Form>
-                    </div>  
-                    
+                    </div> 
+                            </Col>
+                            </Row>
+
+                    </Col>
+                    <Col span={3}></Col> 
+                    </Row>
                     </Content>
                 </Layout>
 
