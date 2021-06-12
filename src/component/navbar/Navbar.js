@@ -55,22 +55,22 @@ const Navbar =({history})=> {
         </div>
             <div className="NavBar-flex" >
 
-            <Menu.Item key="mail" className="NavBar-flexItem">
+            <Menu.Item key="home" className="NavBar-flexItem">
                 <Link className="link">
                     Home
                 </Link>
             </Menu.Item>
-            <Menu.Item key="app" className="NavBar-flexItem" >
+            <Menu.Item key="services" className="NavBar-flexItem" >
                 <Link className="link">
                     Services
                 </Link>
             </Menu.Item>
-            <Menu.Item key="app" className="NavBar-flexItem" >
+            <Menu.Item key="technology" className="NavBar-flexItem" >
                 <Link className="link">
                     Technology
                 </Link>
             </Menu.Item>
-            <Menu.Item key="app" className="NavBar-flexItem" >
+            <Menu.Item key="aboutus" className="NavBar-flexItem" >
                 <Link className="link">
                     AboutUs
                 </Link>

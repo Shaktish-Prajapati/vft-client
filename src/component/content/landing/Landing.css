@@ -42,7 +42,7 @@ body{
     display: -ms-flexbox;
     align-items: center;
     height: calc(100vh - 90px);
-    background-image: url('../../../assests/backgroundImages/landing_bg.jpg');
+    background-image: url('../../../assests/backgroundImages/landing_bg3.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -54,7 +54,7 @@ body{
     margin: 0px;
     padding: 0px;
     height: calc(100vh - 90px);
-    background: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
     /* padding: 60px 0px; */
     /* text-align: center; */
     display: flex;
@@ -64,7 +64,7 @@ body{
 .page-header-content
 {
     /* width: 50%; */
-    margin-left: 50PX;
+    margin-left: 50px;
 }
 .main-page-header .page-header-content h1 {
     font-size: 60px;
@@ -96,7 +96,8 @@ body{
 }
 .hire-developers-image
 {
-    height: calc(100vh - 90px);
+    /* height: calc(100vh - 90px); */
+    height: auto;
     align-items: center;
     text-align: center;
 }
@@ -104,7 +105,8 @@ body{
 {
     font-size: 20px;
     background-color: #fff;
-    height: calc(100vh - 90px);
+    /* height: calc(100vh - 90px); */
+    height: auto;
     padding: 50px 40px 30px 20px;
     color: rgb(0,21,41);
     overflow: scroll;
@@ -196,6 +198,8 @@ body{
     }
     .page-header-content {
         padding: 0px;
+        margin-left: 10px;
+        width: 100%;
     }
 }
 
@@ -208,4 +212,15 @@ body{
     }
 }
 
+@media only screen and (max-width:900px){
+    .page-header-content-right-side{
+        display: none;
+    }
+    .hire-developers-text {
+        height: auto;
+    }
+    .hire-developers-image {
+        height: auto;
+    }
+}
 

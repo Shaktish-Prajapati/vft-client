@@ -22,7 +22,7 @@ function App() {
   
   return (
     <Provider store={store}>
-      <Layout >
+      {/* <Layout > */}
         <Router>
           <Navbar/>
         <Switch>
@@ -37,7 +37,7 @@ function App() {
         </Switch>
         <Footer/>
         </Router>
-      </Layout>
+      {/* </Layout> */}
     </Provider>
   );
 }

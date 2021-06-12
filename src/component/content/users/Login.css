@@ -1,0 +1,21 @@
+
+.login-card { 
+    margin: 5%;
+    /* padding: 10%; */
+    background-image: radial-gradient(circle,#0155B7,#7AB2FF);
+    border: none;
+    box-shadow: 10px 10px 25px #090A1F;
+}
+
+
+
+/* =============  MEDIA QUERIES =============== */
+
+
+@media (max-width:600px) {
+    .login-image-col
+    {
+        display: none;
+    }
+    
+}

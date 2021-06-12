@@ -1,214 +1,118 @@
-import React, { useState,useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux'
-import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Layout } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Layout, Card } from 'antd';
 import Footer from '../../footer/Footer'
 import { Register } from '../../../redux/user/UserActions';
 
-const {Header,Content} = Layout
-const { Option } = Select;
+import loginSideImage from '../../../assests/backgroundImages/login_side.jpg'
+import { GoogleLogin } from 'react-google-login'
+import './Login.css'
 
-const formItemLayout = {
+const layout = {
     labelCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 8,
-        },
+        span: 8,
     },
     wrapperCol: {
-        xs: {
-            span: 24,
-        },
-        sm: {
-            span: 16,
-        },
+        span: 16,
     },
 };
-const tailFormItemLayout = {
+const tailLayout = {
     wrapperCol: {
-        xs: {
-            span: 24,
-            offset: 0,
-        },
-        sm: {
-            span: 16,
-            offset: 8,
-        },
+        offset: 8,
+        span: 16,
     },
 };
 
-const RegistrationForm = ({history}) => {
-    const [form] = Form.useForm();
-    const dispatch = useDispatch();
-    const {loading, error, userData} = useSelector(state => state.userRegister);
-    
-    const handleSubmit = (values) => {
-        // creating form data object reference
-        let  formData = new FormData;
-        formData.append('name',values.name);
-        formData.append('email',values.email);
-        formData.append('password',values.password);
-        formData.append('phone',values.phone);
-
-        // dispatch for registration
-        dispatch(Register(formData));
-        
+const Login = () => {
+    const onFinish = (values) => {
+        console.log('Success:', values);
     };
 
-    useEffect(() => {
-        // redirect to website page after successfull registration
-        if (userData) {
-            history.push("/website");
-        }
-    }, [history,userData]);
-    
-    const prefixSelector = (
-        <Form.Item name="prefix" noStyle>
-        <Select
-        style={{
-            width: 70,
-        }}
-        >
-        <Option value="91">+91</Option>
-        {/* we can pass multiple option here as option */}
-        </Select>
-        </Form.Item>
-        );
+    const onFinishFailed = (errorInfo) => {
+        console.log('Failed:', errorInfo);
+    };
 
-        return (
-            <Layout style={{ minHeight: '100vh' }} >
-                <Header >
-                    <h2 style={{color:'whitesmoke'}}>User Registration</h2>
-                </Header>
-                <Layout className="site-layout" >
-                    <Content style={{ margin: '24px 16px 0' }} >
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360, background:'white' }}>
+    const successGoogle = async(res)=>{
+        const result = res?.profileObj;
+        const token = res?.tokenId;
+        console.log(token);
+    }
+    const failGoogle = async(err)=>{
+        console.log(err);
+        console.log('goole fail');
+    }
+
+    return (
+        <Layout key="login">
+            <Card /* title="Login..." */ className='login-card' >
+                <h3>Login...</h3>
+                <Row>
+                    <Col span={12} className='login-image-col'>
+                        <img src={loginSideImage} width='100%' height='100%' id='login-side-image' />
+                    </Col>
+                    <Col span={12}>
                         <Form
-                            {...formItemLayout}
-                            form={form}
-                            name="register"
-                            onFinish={handleSubmit}
+                            {...layout}
+                            name="basic"
                             initialValues={{
-                                prefix: '91',
+                                remember: true,
                             }}
-                            scrollToFirstError
-                            >
+                            onFinish={onFinish}
+                            onFinishFailed={onFinishFailed}
+                        >
                             <Form.Item
-                            name="email"
-                            label="E-mail"
-                            rules={[
-                                {
-                                    type: 'email',
-                                    message: 'The input is not valid E-mail!',
-                                },
-                                {
-                                    required: true,
-                                    message: 'Please input your E-mail!',
-                                },
-                            ]}
-                            >
-                            <Input />
-                            </Form.Item>
-                            
-                            <Form.Item
-                            name="password"
-                            label="Password"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your password!',
-                                },
-                            ]}
-                            hasFeedback
-                            >
-                            <Input.Password />
-                            </Form.Item>
-                            
-                            <Form.Item
-                            name="confirm"
-                            label="Confirm Password"
-                            dependencies={['password']}
-                            hasFeedback
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please confirm your password!',
-                                },
-                                ({ getFieldValue }) => ({
-                                    validator(_, value) {
-                                        if (!value || getFieldValue('password') === value) {
-                                            return Promise.resolve();
-                                        }
-                                        
-                                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                label="Username"
+                                name="username"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your username!',
                                     },
-                                }),
-                            ]}
+                                ]}
                             >
-                            <Input.Password />
+                                <Input />
                             </Form.Item>
-                            
+
                             <Form.Item
-                            name="name"
-                            label="Name"
-                            tooltip="What do you want others to call you?"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your Name!',
-                                    whitespace: true,
-                                },
-                            ]}
+                                label="Password"
+                                name="password"
+                                rules={[
+                                    {
+                                        required: true,
+                                        message: 'Please input your password!',
+                                    },
+                                ]}
                             >
-                            <Input />
+                                <Input.Password />
                             </Form.Item>
-                            
-                            <Form.Item
-                            name="phone"
-                            label="Phone Number"
-                            rules={[
-                                {
-                                    required: true,
-                                    message: 'Please input your phone number!',
-                                },
-                            ]}
-                            >
-                            <Input
-                            addonBefore={prefixSelector}
-                            style={{
-                                width: '100%',
-                            }}
-                            />
+
+                            <Form.Item {...tailLayout} name="remember" valuePropName="checked">
+                                <Checkbox>Remember me</Checkbox>
                             </Form.Item>
-                            
-                            <Form.Item
-                            name="agreement"
-                            valuePropName="checked"
-                            rules={[
-                                {
-                                    validator: (_, value) =>
-                                    value ? Promise.resolve() : Promise.reject(new Error('Should accept agreement')),
-                                },
-                            ]}
-                            {...tailFormItemLayout}
-                            >
-                            <Checkbox>
-                            I have read the <a href="">agreement</a>
-                            </Checkbox>
+
+                            <Form.Item {...tailLayout}>
+                                <Button type="primary" htmlType="submit">
+                                    Submit
+                                </Button>
                             </Form.Item>
-                            <Form.Item {...tailFormItemLayout}>
-                            <Button type='primary' htmlType='submit' loading={loading}>
-                            Register
-                            </Button>
+                            <Form.Item {...tailLayout}>
+                                <GoogleLogin
+                                    clientId="604732994949-l1nhb6qluvcoeo7svmdl7g1f1r1ng371.apps.googleusercontent.com"
+                                    // render={renderProps => (
+                                    //     <button onClick={renderProps.onClick} disabled={renderProps.disabled}>Login with Google</button>
+                                    // )}
+                                    buttonText="Login with Google"
+                                    onSuccess={successGoogle}
+                                    onFailure={failGoogle}
+                                    cookiePolicy={'single_host_origin'}
+                                />
                             </Form.Item>
                         </Form>
-                    </div>  
-                    
-                    </Content>
-                </Layout>
-            </Layout>
-            );
-        };
-export default RegistrationForm
-        
+                    </Col>
+                </Row>
+            </Card>
+        </Layout>
+    );
+};
+
+export default Login;
