@@ -100,7 +100,7 @@ const AppContent = () => {
                 {/* ------------------------------- Application development process section ends here----------------------- */}
 
                 {/* ========================= Core Services section starts here ================== */}
-                <section className="container-fluid core-services">
+                <section className="container-fluidd core-services">
                     <div className="head">
                         <h1>Our Core Servies</h1>
                     </div>

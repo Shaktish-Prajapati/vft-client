@@ -14,7 +14,7 @@ body{
     text-align: left;
     background-color: #fff;
 }
-.container-fluid {
+.container-fluidd {
     margin: 0 auto;
     /* max-width: 1200px; */
     padding: 0 15px;
@@ -199,7 +199,7 @@ body{
     .page-header-content {
         padding: 0px;
         margin-left: 10px;
-        width: 100%;
+        
     }
 }
 
@@ -213,14 +213,43 @@ body{
 }
 
 @media only screen and (max-width:900px){
-    .page-header-content-right-side{
-        display: none;
-    }
     .hire-developers-text {
         height: auto;
     }
     .hire-developers-image {
         height: auto;
     }
+    .main-page-header .page-header-content h1 {
+        font-size: 40px;
+        color: #252B33;
+        font-weight: 500;
+        line-height: 40px;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+        margin-top: 0px;
+        color: #fff;
+    }
+    .main-page-header .page-header-content p {
+        font-size: 20px;
+        font-weight: 300;
+        /* line-height: 20px; */
+        margin-top: 0px;
+        color: #fff;
+    }
+    .main-page-header 
+{
+    width: 100%;
+    /* padding: 60px 0px; */
+    /* text-align: center; */
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    height: auto;
+    background-image: url('../../../assests/backgroundImages/landing_bg3.jpg');
+    background-position: none;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+}
 }
 

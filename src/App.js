@@ -6,7 +6,7 @@ import FileUpload from './component/fileUpload/FileUpload';
 import Payment from './component/payment/Payment';
 import Navbar from './component/navbar/Navbar'
 import {Layout} from 'antd'
-import AppHeader from './component/header/Header';
+import AppHeader from './component/navbar/AppHeader';
 import AppFooter from './component/footer/Footer';
 import Landing from './component/content/landing/Landing';
 import Website from './component/content/weOffer/website/Website';
@@ -16,6 +16,7 @@ import Login from './component/content/users/Login.js';
 import AboutUs from './component/content/aboutUs/AboutUs'
 import ProtectedRoute from './component/protection/ProtectedRoute'
 import Footer  from './component/footer/Footer'
+import 'antd/dist/antd.css';
 
 
 function App() {
@@ -25,15 +26,16 @@ function App() {
       {/* <Layout > */}
         <Router>
           <Navbar/>
+          {/* <AppHeader /> */}
         <Switch>
           <Route exact path='/' component={Landing}/>
           <Route path='/login' component={Login} />
-          <Route path='/register' component={Register}/>
-          <Route path='/aboutUs' component={AboutUs}/>
-          <Route path='/user' />
+          {/* <Route path='/register' component={Register}/> */}
+          {/* <Route path='/aboutUs' component={AboutUs}/> */}
+          {/* <Route path='/user' /> */}
           {/* PROTECTED ROUTES: ACCESS AFTER LOGIN ONLY!!! */}
           {/* <ProtectedRoute path='/website' component={Website}/> */}
-          <Route path='/website' component={Website}/>
+          {/* <Route path='/website' component={Website}/> */}
         </Switch>
         <Footer/>
         </Router>

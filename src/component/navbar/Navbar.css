@@ -58,7 +58,7 @@ vertical-align: middle;
   font-family: 'Ubuntu', sans-serif;
   font-style: normal;
   font-weight: normal;
-  /* padding-left: 5px; */
+  padding: 5% 15px;
   color: #FCF6F6;
 }
 .NavBar .name-icon {
@@ -75,7 +75,7 @@ vertical-align: middle;
 
 .NavBar .User-icon {
 float: right;
-padding: 10px;
+/* padding: 10px; */
 line-height: 100%;
 }
 
@@ -86,7 +86,8 @@ line-height: 100%;
   background-color: red;
   background-image: url( '../../assests/svg/vft-right.png');
   position: relative;
-  left: 50px;
+  /* left: 50px; */
+  padding: 2px 5% ;
   
 
   
@@ -136,6 +137,18 @@ font-size: 18px;
 line-height: 21px;
 /* identical to box height */
 color: #FFFBFB;
+}
+
+.link {
+  font-size: 20px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:600px) {
+  .User-icon .User-logo .User-name {
+    display: none;
+  }
 }
 
 /* PURU CSS */
